@@ -1,5 +1,6 @@
 # Dependencias de Composer
 /vendor/
+composer.phar
 
 # Variables de entorno sensibles
 .env
