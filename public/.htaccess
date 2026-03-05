@@ -1,0 +1,13 @@
+# Habilita el motor de reescritura de URLs de Apache.
+RewriteEngine On
+
+# Desactiva el listado de directorios para mejorar seguridad.
+Options -Indexes
+
+# Solo reescribe cuando el recurso solicitado no es un archivo real ni un directorio real.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirección limpia al Front Controller
+# Quitamos la / inicial de index.php para que sea relativa a la ubicación del .htaccess
+RewriteRule ^ index.php [L,QSA]
