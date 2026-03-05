@@ -1,0 +1,16 @@
+Debes comentar adecuadamente el fichero.
+
+# Sustituye comentario por lo que hace la siguiente línea.
+RewriteEngine On
+
+# Sustituye este comentario por lo que hace la siguiente línea.
+Options -Indexes
+
+# Sustituye este comentario por lo que hacen las siguientes líneas.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirección limpia al Front Controller
+# Quitamos la / inicial de index.php para que sea relativa a la ubicación del .htaccess
+RewriteRule ^ index.php [L,QSA]
+
